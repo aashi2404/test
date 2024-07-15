@@ -1,0 +1,56 @@
+<div class="login-container">
+  <h1>Login Form</h1>
+  <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="username">Username</label>
+      <input id="username" formControlName="username" type="text">
+      <div *ngIf="myform.get('username')?.invalid && myform.get('username')?.touched">
+        Username is required and must be at least 4 characters long.
+      </div>
+    </div>
+    
+    <div>
+      <label for="gmail">Gmail</label>
+      <input id="gmail" formControlName="gmail" type="text">
+      <div *ngIf="myform.get('gmail')?.invalid && myform.get('gmail')?.touched">
+        Valid Gmail address is required.
+      </div>
+    </div>
+    
+    <div>
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password">
+      <div *ngIf="myform.get('password')?.invalid && myform.get('password')?.touched">
+        Password is required and must be at least 5 characters long.
+      </div>
+    </div>
+    
+    <button type="submit">LOGIN</button>
+    <button type="button" (click)="onReset()">RESET</button>
+  </form>
+</div>
+<div class="userList">
+  <div *ngIf="showUserList">
+    <h2>User List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Avatar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.email }}</td>
+          <td><img [src]="user.avatar" alt="{{ user.first_name }}'s avatar"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
