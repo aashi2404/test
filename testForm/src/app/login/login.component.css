@@ -3,13 +3,14 @@
     margin: 0;
     padding: 0;
   }
+  
  .login-container {
     width: 50%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #e6a8d8;
+    background-color:#A7C7E7;
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -67,7 +68,7 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #e6bedc;
+    background-color:#8bb8e6;
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -87,8 +88,13 @@
     font-family: 'Arial', sans-serif;
   }
   
+  td {
+    background-color: #e2edf1;
+    color: #333;
+  }
+
   th {
-    background-color: #f8f9fa;
+    background-color: #d3d4d4;
     color: #333;
   }
   
@@ -98,4 +104,8 @@
     border-radius: 50%;
     object-fit: cover;
   }
-  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
